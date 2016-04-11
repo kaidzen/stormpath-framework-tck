@@ -30,6 +30,7 @@ import org.testng.annotations.Test
 import static com.jayway.restassured.RestAssured.delete
 import static com.jayway.restassured.RestAssured.given
 import static com.jayway.restassured.RestAssured.put
+import static com.stormpath.tck.util.FrameworkConstants.LoginRoute
 import static org.hamcrest.Matchers.*
 import static org.testng.Assert.*
 import static org.hamcrest.MatcherAssert.assertThat
@@ -525,6 +526,27 @@ class LoginIT extends AbstractIT {
         .then()
             .statusCode(302)
             .header("Location", is("/foo"))
+    }
+
+    /** Next parameter should not allow open redirects
+     * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/117">#117</a>
+     * @throws Exception
+     */
+    @Test(groups=["v100"])
+    public void nextParameterShouldNotBeOpenRedirect() throws Exception {
+
+        // todo: work with CSRF
+
+        given()
+            .accept(ContentType.HTML)
+            .formParam("login", account.email)
+            .formParam("password", account.password)
+            .queryParam("next", "http://www.foo.com/bar/baz")
+        .when()
+            .post(LoginRoute)
+        .then()
+            .statusCode(302)
+            .header("Location", is("/bar/baz"))
     }
 
     /** Render unverified status message
