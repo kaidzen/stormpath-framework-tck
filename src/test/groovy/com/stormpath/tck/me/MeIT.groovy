@@ -60,7 +60,7 @@ class MeIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/37">#37</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meFailsOnUnauthenticatedRequest() throws Exception {
         when()
             .get(MeRoute)
@@ -75,7 +75,7 @@ class MeIT extends AbstractIT {
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/234
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meWithCookieAuthReturnsJsonUser() throws Exception {
         given()
             .cookie("access_token", accessToken)
@@ -92,7 +92,7 @@ class MeIT extends AbstractIT {
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/235
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meWithBearerAuthReturnsJsonUser() throws Exception {
         given()
             .auth().oauth2(accessToken)
@@ -106,7 +106,7 @@ class MeIT extends AbstractIT {
      * Me should take Basic auth with an account's API keys as well.
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/236
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meWithBasicAuthReturnsJsonUser() throws Exception {
         Response apiKeysResource = given()
             .header("User-Agent", "stormpath-framework-tck")
@@ -136,7 +136,7 @@ class MeIT extends AbstractIT {
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/234
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meWithCookieAuthStripsLinkedResources() throws Exception {
         given()
             .cookie("access_token", accessToken)
@@ -152,7 +152,7 @@ class MeIT extends AbstractIT {
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/235
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meWithBearerAuthStripsLinkedResources() throws Exception {
         given()
             .auth().oauth2(accessToken)
@@ -168,7 +168,7 @@ class MeIT extends AbstractIT {
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/234
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meWithCookieAuthHasNoCacheHeaders() throws Exception {
         given()
             .cookie("access_token", accessToken)
@@ -187,7 +187,7 @@ class MeIT extends AbstractIT {
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/235
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void meWithBearerAuthHasNoCacheHeaders() throws Exception {
         given()
             .auth().oauth2(accessToken)
@@ -203,7 +203,7 @@ class MeIT extends AbstractIT {
     /** We shouldn't be able to authenticate with a JWT that uses an algorithm of none.
      * @see https://github.com/stormpath/stormpath-framework-tck/issues/231
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void unsignedAccessTokensShouldFail() throws Exception {
         String unsignedAccessToken = changeJwtAlgorithmToNone(accessToken)
 

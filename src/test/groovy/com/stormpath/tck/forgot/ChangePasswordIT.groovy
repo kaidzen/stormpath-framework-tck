@@ -55,7 +55,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/166">#166</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json", "html"])
+    @Test(groups=["v100", "config-default", "json", "html"])
     public void changeDoesNotHandlePut() throws Exception {
         put(ChangeRoute)
                 .then()
@@ -66,7 +66,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/166">#166</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json", "html"])
+    @Test(groups=["v100", "config-default", "json", "html"])
     public void changeDoesNotHandleDelete() throws Exception {
         delete(ChangeRoute)
                 .then()
@@ -77,7 +77,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/239">#239</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void changeErrorsForInvalidSptokenJson() throws Exception {
 
         given()
@@ -94,7 +94,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/216">#216</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void changeErrorsForMissingSptokenJson() throws Exception {
 
         given()
@@ -110,7 +110,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/159">#159</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void changeErrorsForInvalidSptokenWhenPostingJson() throws Exception {
 
         given()
@@ -130,7 +130,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/147">#147</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void changeRedirectsToErrorUriForInvalidSptoken() throws Exception {
 
         given()
@@ -147,7 +147,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/151">#151</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void changeRediredctsToForgotUriForMissingSptoken() throws Exception {
 
         given()
@@ -163,7 +163,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/158">#158</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void changeRedirectsToErrorUriForInvalidSptokenWhenPosting() throws Exception {
 
         given()
@@ -182,7 +182,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/149">#149</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void changeRendersFormForValidSptoken() throws Exception {
 
         // TODO: work with CSRF?
@@ -219,7 +219,7 @@ class ChangePasswordIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/155">#155</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void changeEndpointChangesAccountPasswordWhenPostingJson() throws Exception {
         // TODO: work with CSRF?
 

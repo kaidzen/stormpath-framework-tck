@@ -84,7 +84,7 @@ class LogoutIT extends AbstractIT {
     /** Only handle POST
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/54">#54</a>
      */
-    @Test(groups=["v100", "json", "html"])
+    @Test(groups=["v100", "config-default", "json", "html"])
     public void logoutDoesNotHandleGet() throws Exception {
         get(LogoutRoute)
             .then()
@@ -94,7 +94,7 @@ class LogoutIT extends AbstractIT {
     /** Only handle POST
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/54">#54</a>
      */
-    @Test(groups=["v100", "json", "html"])
+    @Test(groups=["v100", "config-default", "json", "html"])
     public void logoutDoesNotHandlePut() throws Exception {
         put(LogoutRoute)
             .then()
@@ -104,7 +104,7 @@ class LogoutIT extends AbstractIT {
     /** Only handle POST
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/54">#54</a>
      */
-    @Test(groups=["v100", "json", "html"])
+    @Test(groups=["v100", "config-default", "json", "html"])
     public void logoutDoesNotHandleDelete() throws Exception {
         delete(LogoutRoute)
             .then()
@@ -115,7 +115,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/172">#172</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void logoutSucceedsOnUnauthenticatedJsonRequest() throws Exception {
 
         given()
@@ -130,7 +130,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/174">#174</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void logoutDeletesCookiesJson() throws Exception {
         def sessionCookies = createSession()
 
@@ -151,7 +151,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/171">#171</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void logoutReturns200OKOnSuccess() throws Exception {
         def sessionCookies = createSession()
 
@@ -168,7 +168,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/175">#175</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void logoutRevokesTokensAfterSuccessJson() throws Exception {
         def sessionCookies = createSession()
 
@@ -185,7 +185,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/173">#173</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void logoutRedirectsToNextUriOnUnauthenticatedRequest() throws Exception {
 
         given()
@@ -201,7 +201,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/170">#170</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void logoutRedirectsToNextUriOnSuccess() throws Exception {
         def sessionCookies = createSession()
 
@@ -219,7 +219,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/53">#53</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void logoutDeletesCookiesHtml() throws Exception {
         def sessionCookies = createSession()
 
@@ -240,7 +240,7 @@ class LogoutIT extends AbstractIT {
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/169">#169</a>
      * @throws Exception
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void logoutRevokesTokensHtml() throws Exception {
         def sessionCookies = createSession()
 

@@ -31,7 +31,7 @@ class RequestsIT extends AbstractIT {
      * Null or empty Accept header is treated as * / *
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/72">#72</a>
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void emptyAcceptHeaderShouldGetJson() {
 
         given()
@@ -48,7 +48,7 @@ class RequestsIT extends AbstractIT {
      * Null or empty Accept header is treated as * / *
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/72">#72</a>
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void missingAcceptHeaderShouldGetJson() {
 
         given()
@@ -64,7 +64,7 @@ class RequestsIT extends AbstractIT {
      * Accept: * / * uses first value in web.produces as Content-Type
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/73">#73</a>
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void anyAcceptHeaderShouldGetJson() {
 
         given()
@@ -81,7 +81,7 @@ class RequestsIT extends AbstractIT {
      * Specifying valid Accept Content-Type returns that Content-Type
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/75">#75</a>
      */
-    @Test(groups=["v100", "json"])
+    @Test(groups=["v100", "config-default", "json"])
     public void jsonAcceptHeaderShouldReturnJson() {
 
         given()
@@ -97,7 +97,7 @@ class RequestsIT extends AbstractIT {
      * Specifying valid Accept Content-Type returns that Content-Type
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/75">#75</a>
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void htmlAcceptHeaderShouldReturnHtml() {
 
         given()
@@ -113,7 +113,7 @@ class RequestsIT extends AbstractIT {
      * Unknown Accept header is not handled
      * @see <a href="https://github.com/stormpath/stormpath-framework-tck/issues/76">#76</a>
      */
-    @Test(groups=["v100", "html"])
+    @Test(groups=["v100", "config-default", "html"])
     public void unknownAcceptHeaderIsNotHandled() {
 
         given()
