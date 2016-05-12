@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Spec v1.0 - Default Configuration">
+    <test name="html" preserve-order="true">
+        <method-selectors>
+            <method-selector>
+                <script language="beanshell"><![CDATA[
+                    groups.containsKey("v100") && groups.containsKey("html")
+                ]]></script>
+            </method-selector>
+        </method-selectors>
+        <packages>
+            <package name="com.stormpath.tck.*" />
+        </packages>
+    </test>
+    <test name="json" preserve-order="true">
+        <method-selectors>
+            <method-selector>
+                <script language="beanshell"><![CDATA[
+                    groups.containsKey("v100") && groups.containsKey("json")
+                ]]></script>
+            </method-selector>
+        </method-selectors>
+        <packages>
+            <package name="com.stormpath.tck.*" />
+        </packages>
+    </test>
+</suite>
