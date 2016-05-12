@@ -4,7 +4,9 @@
         <method-selectors>
             <method-selector>
                 <script language="beanshell"><![CDATA[
-                    groups.containsKey("v100") && groups.containsKey("html")
+                    groups.containsKey("v100") &&
+                    groups.containsKey("config-default") &&
+                    groups.containsKey("html")
                 ]]></script>
             </method-selector>
         </method-selectors>
@@ -16,7 +18,9 @@
         <method-selectors>
             <method-selector>
                 <script language="beanshell"><![CDATA[
-                    groups.containsKey("v100") && groups.containsKey("json")
+                    groups.containsKey("v100") &&
+                    groups.containsKey("config-default") &&
+                    groups.containsKey("json")
                 ]]></script>
             </method-selector>
         </method-selectors>
